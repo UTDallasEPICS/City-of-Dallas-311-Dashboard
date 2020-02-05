@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 ## 311 SR Dashboard
-=======
-## User Input
->>>>>>> user-input
 
 ### Usage
 Run commands:
@@ -11,8 +8,7 @@ Run commands:
 
 ### Description 
 
-<<<<<<< HEAD
 Primary 311 Service Request dashboard merging components from filter, heat map and data vis attributes. 
-=======
-Filter to allow users to parse specific service requests.
->>>>>>> user-input
+
+# City-of-Dallas-311-Dashboard
+General Code for City of Dallas 311 Dashboard EPICS project
