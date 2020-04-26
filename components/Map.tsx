@@ -26,7 +26,7 @@ export const Map: React.FC<MapProps> = ({}) => {
         onViewportChange={(viewport) => {
           setViewportData(viewport);
         }}
-        mapboxApiAccessToken='pk.eyJ1IjoidXRkZXBpY3MiLCJhIjoiY2s5aGl4NnJzMHpkNjNrbGw5cXVrMW03MiJ9.hzZPdh1FJVdOKHTQQrFbmQ'
+        mapboxApiAccessToken=''
       />
     </div>
   );
