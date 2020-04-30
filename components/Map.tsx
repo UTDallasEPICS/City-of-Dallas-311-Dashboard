@@ -7,9 +7,9 @@ export const Map: React.FC<MapProps> = ({}) => {
   const [viewportData, setViewportData] = useState<ViewportProps>({
     width: 1000,
     height: 1000,
-    latitude: 37.7577,
-    longitude: -122.4376,
-    zoom: 8,
+    latitude: 32.7791,
+    longitude: -96.8003,
+    zoom: 11,
     bearing: 0,
     pitch: 0,
     altitude: 0,
