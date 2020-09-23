@@ -24,8 +24,10 @@ class FilterMenu extends React.Component<FilterMenuProps, FilterMenuState> {
             serviceRequests: [], //this bad boy needs to get the data from John
             searchLocation: '',
             searchRequestNumber: '',
-            searchOptions: ["Air", "Water", "Earth", "Fire"],
-            wordsToSearch: ["Air", "Water", "Earth", "Fire"],
+            searchOptions: ["Animal Control", "Graffiti", "Health & Sanitation", "Historic Preservation", "Information",
+                "Parks", "Property Maintenance", "Scooters", "Solid Waste Services", "Streets & Infrastructure", "Traffic Signals", "Other"],
+            wordsToSearch: ["Animal Control", "Graffiti", "Health & Sanitation", "Historic Preservation", "Information",
+                "Parks", "Property Maintenance", "Scooters", "Solid Waste Services", "Streets & Infrastructure", "Traffic Signals", "Other"],
         }
         this.handleRequestNumberInput = this.handleRequestNumberInput.bind(this);
         this.handleLocationInput = this.handleLocationInput.bind(this);
