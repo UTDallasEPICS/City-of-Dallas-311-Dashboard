@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import ReactMapGl, { ViewportProps } from 'react-map-gl';
 
-interface MapProps {}
+interface MapProps { }
 
-export const Map: React.FC<MapProps> = ({}) => {
+export const Map: React.FC<MapProps> = ({ }) => {
   const [viewportData, setViewportData] = useState<ViewportProps>({
     width: 1000,
     height: 1000,
@@ -26,7 +26,7 @@ export const Map: React.FC<MapProps> = ({}) => {
         onViewportChange={(viewport) => {
           setViewportData(viewport);
         }}
-        mapboxApiAccessToken=''
+        mapboxApiAccessToken='pk.eyJ1IjoidXRkMzExIiwiYSI6ImNrZmZ1NjdvMzBlOXkyeGxhanZtampoeDYifQ.OeukqyiAWtOU3e-MRXHZqg'
       />
     </div>
   );
