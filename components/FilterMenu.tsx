@@ -113,17 +113,27 @@ class FilterMenu extends React.Component<FilterMenuProps, FilterMenuState> {
     search = () => {
         //Create Array Declaration to hold the data
         //Filter the array through the cause value with the values from wordsToSearch
-        let valuesToReturn = this.state.serviceRequests.filter(word => this.check(word.cause))
+        if (this.state.searchRequestNumber == "" && this.state.searchLocation == "") {
+            let valuesToReturn = this.state.serviceRequests.filter(word => this.check(word.cause))
+            return valuesToReturn;
+        }
         //Filter that array through the Request Number value if something is inside
-        if (this.state.searchRequestNumber != "") {
-            valuesToReturn = valuesToReturn.filter(word => word.requestNum.includes(this.state.searchRequestNumber))
+        else if (this.state.searchRequestNumber != "" && this.state.searchLocation == "") {
+            let valuesToReturn = this.state.serviceRequests.filter(word => word.requestNum.includes(this.state.searchRequestNumber)
+                && this.check(word.cause))
+            return valuesToReturn;
         }
         //Filter that array through location value if something has been provided
-        if (this.state.searchLocation != "") {
-            valuesToReturn = valuesToReturn.filter(word => word.address.includes(this.state.searchLocation))
+        else if (this.state.searchLocation != "" && this.state.searchRequestNumber == "") {
+            let valuesToReturn = this.state.serviceRequests.filter(word => word.address.includes(this.state.searchLocation)
+                && this.check(word.cause))
+            return valuesToReturn;
         }
-        return valuesToReturn;
-
+        else {
+            let valuesToReturn = this.state.serviceRequests.filter(word => word.requestNum.includes(this.state.searchRequestNumber)
+                && word.address.includes(this.state.searchLocation) && this.check(word.cause))
+            return valuesToReturn;
+        }
     }
 
     render() {
