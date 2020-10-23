@@ -8,7 +8,7 @@ type Props = {
 
 const Layout: React.FunctionComponent<Props> = ({
   children,
-  title = 'This is the default title',
+  title = 'Title here',
 }) => (
   <div>
     <Head>
@@ -19,23 +19,23 @@ const Layout: React.FunctionComponent<Props> = ({
     <header>
       <nav>
         <Link href="/">
-          <a>Home</a>
+          <a>Link1</a>
         </Link>{' '}
         |{' '}
-        <Link href="/about">
-          <a>About</a>
+        <Link href="/">
+          <a>Link2</a>
         </Link>{' '}
         |{' '}
-        <Link href="/users">
-          <a>Users List</a>
+        <Link href="/">
+          <a>Link3</a>
         </Link>{' '}
-        | <a href="/api/users">Users API</a>
+        | <a href="/">Link4</a>
       </nav>
     </header>
     {children}
     <footer>
       <hr />
-      <span>I'm here to stay (Footer)</span>
+      <span>Footer here </span>
     </footer>
   </div>
 )
