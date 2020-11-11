@@ -31,13 +31,13 @@ export const Map: React.FC<MapProps> = ({ }) => {
   );
 
   return (
-    <div>
+    <div style={{ gridArea: 'Map' }}>
       <ReactMapGl
         {...viewportData}
         onViewportChange={(viewportData) => {
           setViewportData(viewportData);
         }}
-        mapboxApiAccessToken = {MAPBOX_TOKEN}
+        mapboxApiAccessToken={MAPBOX_TOKEN}
       >
       </ReactMapGl>
     </div>

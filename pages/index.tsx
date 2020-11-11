@@ -6,8 +6,12 @@ class index extends Component {
   render() {
     return (
       <div>
-        <FilterMenu />
-        <Map />
+        <div className="311-dashboard-container" style={{
+          display: 'grid', gridTemplateAreas: '"FilterMenu Map Map Map"'
+        }}>
+          < FilterMenu />
+          <Map />
+        </div>
       </div>
     )
   }
