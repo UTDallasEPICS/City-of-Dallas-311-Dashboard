@@ -1,6 +1,5 @@
 import React from 'react'
 import { SeacrhLocationBox, SearchRequestNumberBox } from './SearchBox';
-
 export interface FilterMenuProps {
 
 }
@@ -13,6 +12,7 @@ export interface FilterMenuState {
     }[],
     searchLocation: string,
     searchRequestNumber: string,
+
     searchOptions: string[],
     wordsToSearch: string[],
 }
@@ -103,12 +103,18 @@ class FilterMenu extends React.Component<FilterMenuProps, FilterMenuState> {
         }
     }
 
+    getSlider = () => {
+        const val = document.getElementById("districtSlider") as HTMLInputElement;
+        const value = val.value;
+        console.log(value);
+    }
+
+
     check(value: any) {
         let allLower = this.state.wordsToSearch.map(word => word.toLowerCase());
         if (allLower.includes(value.toLowerCase)) return value;
         return false;
     }
-
 
     search = () => {
         //Create Array Declaration to hold the data
@@ -154,9 +160,11 @@ class FilterMenu extends React.Component<FilterMenuProps, FilterMenuState> {
                 <h1>Search</h1>
                 <SeacrhLocationBox handleInput={this.handleLocationInput} />
                 <SearchRequestNumberBox handleInput={this.handleRequestNumberInput} />
-                <input type="CheckBox" id="AllButton" defaultChecked={true} onClick={this.handleAllClick} />
+                <input type="CheckBox" id="AllButton" defaultChecked={true} onInput={this.getSlider} />
                 <label>Select All</label>
                 {printList}
+                <input type='range' id="districtSlider" min="0" max="14" step="1" defaultValue="0" />
+                <button type="button" onClick={this.search}>Search</button>
             </div>
         );
     }
