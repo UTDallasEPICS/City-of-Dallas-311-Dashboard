@@ -12,7 +12,6 @@ export interface FilterMenuState {
     }[],
     searchLocation: string,
     searchRequestNumber: string,
-
     searchOptions: string[],
     wordsToSearch: string[],
 }
