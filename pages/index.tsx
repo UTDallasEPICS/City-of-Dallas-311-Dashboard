@@ -1,4 +1,5 @@
 import Filter from "../components/Filter";
+import FilterMenu from "../components/FilterMenu";
 import React, { Component } from 'react';
 
 class index extends Component {
