@@ -1,5 +1,8 @@
 import React from 'react'
 import { SeacrhLocationBox, SearchRequestNumberBox } from './SearchBox';
+import './Dropper'
+import Dropper from './Dropper';
+
 export interface FilterMenuProps {
 
 }
@@ -14,6 +17,8 @@ export interface FilterMenuState {
     searchRequestNumber: string,
     searchOptions: string[],
     wordsToSearch: string[],
+    showSearch: boolean,
+    showDistrict: boolean
 }
 
 class FilterMenu extends React.Component<FilterMenuProps, FilterMenuState> {
@@ -27,6 +32,8 @@ class FilterMenu extends React.Component<FilterMenuProps, FilterMenuState> {
                 "Parks", "Property Maintenance", "Scooters", "Solid Waste Services", "Streets & Infrastructure", "Traffic Signals", "Other"],
             wordsToSearch: ["Animal Control", "Graffiti", "Health & Sanitation", "Historic Preservation", "Information",
                 "Parks", "Property Maintenance", "Scooters", "Solid Waste Services", "Streets & Infrastructure", "Traffic Signals", "Other"],
+            showDistrict: false,
+            showSearch: true,
         }
         this.handleRequestNumberInput = this.handleRequestNumberInput.bind(this);
         this.handleLocationInput = this.handleLocationInput.bind(this);
@@ -141,19 +148,24 @@ class FilterMenu extends React.Component<FilterMenuProps, FilterMenuState> {
         }
     }
 
+    displaySearchMenu = (item: JSX.Element[]) => {
+        if (this.state.showSearch == true) {
+
+        }
+    }
+
     render() {
-        const printList = this.state.searchOptions.map((filterType, index) => {
+        const printTypes = this.state.searchOptions.map((filterType, index) => {
             return (
                 <p key={index} style={{ width: 200, textAlign: 'left' }}>
                     <input className="boxBoys" onClick={() => this.handleClick(filterType)}
-                        type="checkbox" color="primary" defaultChecked={true} id={filterType} />
+                        type="checkbox" color="primary" defaultChecked={true} title={filterType} id={filterType} />
                     <label>
                         {filterType}
                     </label>
                 </p>
             );
         })
-
         return (
             <div style={{ width: 203, border: 'solid', textAlign: 'center' }}>
                 <h1>Search</h1>
@@ -161,8 +173,7 @@ class FilterMenu extends React.Component<FilterMenuProps, FilterMenuState> {
                 <SearchRequestNumberBox handleInput={this.handleRequestNumberInput} />
                 <input type="CheckBox" id="AllButton" defaultChecked={true} onInput={this.getSlider} />
                 <label>Select All</label>
-                {printList}
-                <input type='range' id="districtSlider" min="0" max="14" step="1" defaultValue="0" />
+
                 <button type="button" onClick={this.search}>Search</button>
             </div>
         );
