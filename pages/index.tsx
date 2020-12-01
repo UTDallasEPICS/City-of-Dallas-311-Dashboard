@@ -8,6 +8,9 @@ class index extends Component {
         return (
             <div>
                 <Navibar />
+                <div>
+                    <p />
+                </div>
                 <div className="311-dashboard-container" style={{
                     display: 'grid', gridTemplateAreas: '"FilterMenu Map Map Map"'
                 }}>

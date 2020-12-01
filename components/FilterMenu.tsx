@@ -150,7 +150,7 @@ class FilterMenu extends React.Component<FilterMenuProps, FilterMenuState> {
         })
 
         return (
-            <div style={{ width: 203, border: 'solid', textAlign: 'center', gridArea: 'FilterMenu' }}>
+            <div style={{ width: 203, height: 600, border: 'solid', textAlign: 'center', gridArea: 'FilterMenu' }}>
                 <h1>Search</h1>
                 <SeacrhLocationBox handleInput={this.handleLocationInput} />
                 <SearchRequestNumberBox handleInput={this.handleRequestNumberInput} />
