@@ -1,7 +1,6 @@
 import React from 'react'
 import { SeacrhLocationBox, SearchRequestNumberBox } from './SearchBox';
-import './Dropper'
-import Dropper from './Dropper';
+
 
 export interface FilterMenuProps {
 
