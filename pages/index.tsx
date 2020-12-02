@@ -1,32 +1,15 @@
-/* import files */
-import * as React from "react";
-import { App } from "./vertical_bar";
-//import { App } from "./horizontal_bar";
-//import {App} from "./pie_chart";
+import Link from 'next/link'
+import Layout from '../components/Layout'
 
-/* vertical bar chart render*/
-export default class vertical_bar extends React.Component<any, any> {
-  render() {
-    return (
-      <App/>
-    );
-  }
-}
+const IndexPage = () => (
+  <Layout title="Home | Next.js + TypeScript Example">
+    <h1>Hello Next.js 👋</h1>
+    <p>
+      <Link href="/about">
+        <a>About</a>
+      </Link>
+    </p>
+  </Layout>
+)
 
-/* horizontal bar chart render*/
-/*export default class horizontal_bar extends React.Component<any, any> {
-  render() {
-    return (
-      <App/>
-    );
-  }
-}*/
-
-/* pie chart render*/
-/*export default class pie_chart extends React.Component<any, any> {
-  render(){
-    return (
-      <App/>
-    );
-  }
-}*/
+export default IndexPage
