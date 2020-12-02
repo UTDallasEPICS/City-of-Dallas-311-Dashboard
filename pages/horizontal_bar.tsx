@@ -5,7 +5,6 @@ import { scaleLinear, scaleBand } from 'd3-scale'
 import { max } from 'd3-array'
 import randomstring from 'randomstring'
 
-
 /* sample data */
 let initialData = [
 
@@ -45,8 +44,6 @@ const dimensions = {
 
 
 export const App: React.FC = () => {
-
-    /* vertical bar chart element */
     const ref = useRef<SVGSVGElement | null>(null)
     const [selection, setSelection] = useState<null | Selection<
     SVGSVGElement | null, 
@@ -81,7 +78,7 @@ export const App: React.FC = () => {
                 .attr('height', d => dimensions.height -y(d.units))
                 .attr('x', d=>x(d.name)!)
                 .attr('y', d=>y(d.units))
-                .attr('fill', 'blue')
+                .attr('fill', 'orange')
         }
     }, [selection])
 
@@ -107,7 +104,7 @@ export const App: React.FC = () => {
             .attr('height', d => dimensions.height -y(d.units))
             .attr('x', d=>x(d.name)!)
             .attr('y', d=>y(d.units))
-            .attr('fill', 'blue')
+            .attr('fill', 'orange')
 
             rects   
                 .enter()
@@ -116,7 +113,7 @@ export const App: React.FC = () => {
             .attr('height', d => dimensions.height -y(d.units))
             .attr('x', d=>x(d.name)!)
             .attr('y', d=>y(d.units))
-            .attr('fill', 'blue')
+            .attr('fill', 'orange')
 
         }
     }, [data])
@@ -138,10 +135,6 @@ export const App: React.FC = () => {
         const slicedData = data.slice(0, data.length-1)
         setData(slicedData)
     }
-
-
-
-    /* return  function */
     return (
         <div>
             <svg 
@@ -151,7 +144,6 @@ export const App: React.FC = () => {
             />
             <button onClick={addRandom}>Add Random</button>
             <button onClick={removeLast}>Remove Last</button>
-            
         </div>
     )
 }

@@ -20,7 +20,7 @@ export const App = () => {
           cx={200}
           cy={200}
           outerRadius={80}
-          fill="white"
+          fill="black"
           label
           />
         </PieChart>

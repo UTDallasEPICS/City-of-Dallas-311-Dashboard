@@ -22,7 +22,7 @@ export default class vertical_bar extends React.Component<any, any> {
   }
 }*/
 
-/*pie chart render*/
+/* pie chart render*/
 /*export default class pie_chart extends React.Component<any, any> {
   render(){
     return (
