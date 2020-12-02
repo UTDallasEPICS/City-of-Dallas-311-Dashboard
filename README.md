@@ -10,10 +10,10 @@ Run commands:
 
 ### Branches
 
-- dev: primary dashboard merging components
+- dev: primary dashboard merging components -> https://github.com/utdEPICS/City-of-Dallas-311-Dashboard/tree/data-vis
 
-- map: heat map 
+- map: heat map -> https://github.com/utdEPICS/City-of-Dallas-311-Dashboard/tree/map
 
-- user-input: filter 
+- user-input: filter -> https://github.com/utdEPICS/City-of-Dallas-311-Dashboard/tree/user-input
 
-- data-vis: data visualization attributes
+- data-vis: data visualization attributes -> https://github.com/utdEPICS/City-of-Dallas-311-Dashboard/tree/data-vis
