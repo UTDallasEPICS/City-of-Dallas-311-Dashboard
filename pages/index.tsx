@@ -1,12 +1,10 @@
 import FilterMenu from "../components/FilterMenu";
 import { Map } from '../components/Map';
 import React, { Component } from 'react';
-import PieG from "./pie_chart";
-import "./horizontal_bar"
-import "./vertical_bar"
+import PieG from "../components/pie_chart";
 import Navibar from '../components/Navibar';
-import Vert from "./vertical_bar";
-import Horiz from "./horizontal_bar";
+import Vert from "../components/vertical_bar";
+import Horiz from "../components/horizontal_bar";
 
 class index extends Component {
     render() {

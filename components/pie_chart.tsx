@@ -17,7 +17,7 @@ export const PieG = () => {
 
   return (
     <div className="PieG" style={{ gridArea: "PieG" }}>
-      <h1> Number of {title} </h1>
+      <h1> Number of requests per district </h1>
       <PieChart width={400} height={400}>
         <Pie
           dataKey="value"

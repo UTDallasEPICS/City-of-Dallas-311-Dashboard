@@ -29,5 +29,5 @@
     "allowSyntheticDefaultImports": true
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "pages/pie_chart.js"]
+  "include": ["**/*.ts", "**/*.tsx", "pages/pie_chart.tsx"]
 }

@@ -1,7 +1,7 @@
 import { relative } from "path";
 
 const Navibar = (props: any) => (
-    <header style={{ backgroundColor: "#033f88", paddingTop: "0px", paddingRight: "0px" }}>
+    <header style={{ backgroundColor: "#033f88", paddingTop: "10px", paddingBottom: "5px", paddingLeft: "10px", paddingRight: "0px", margin: "-10px", marginBottom: "10px" }}>
         <nav style={{ backgroundColor: "#033f88", overflow: "hidden", border: 0, margin: "-1px", padding: 0 }}>
             <div></div>
             <div>
