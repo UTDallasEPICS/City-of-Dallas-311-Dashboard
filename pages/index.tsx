@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 import FilterMenu from "../components/FilterMenu";
+import FilterHub from "../components/FilterHub";
 import { Map } from '../components/Map';
 import React, { Component } from 'react';
 import PieG from "../components/pie_chart";
@@ -18,7 +18,7 @@ class index extends Component {
                 <div className="311-dashboard-container" style={{
                     display: 'grid', gridTemplateAreas: '"FilterMenu Map PieG"'
                 }}>
-                    < FilterMenu />
+                    <FilterHub />
                     <Map />
                     <PieG />
                 </div>
@@ -35,19 +35,3 @@ class index extends Component {
 export default index;
 
 
-=======
-import FilterHub from "../components/FilterHub";
-import React, { Component } from 'react';
-
-
-
-class index extends Component {
-    render() {
-        return (
-            <FilterHub />
-        )
-    }
-}
-
-export default index;
->>>>>>> user-input
