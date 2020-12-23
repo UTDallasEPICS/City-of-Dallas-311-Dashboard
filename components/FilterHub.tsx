@@ -44,25 +44,47 @@ const Requests = [
   should do the rest if in correct format.
 */
 
-var searchLocation: string;
-var searchRequestNumber: string;
+let searchLocation: string;
+let searchRequestNumber: string;
+let departmentValue: string;
+let requestTypeValue: string;
+let district: number;
 
 
 class FilterHub extends Component {
 
     getDepartmentValue = () => {
-        //TODO
-        //return selection variable in filter titled departments
-    };
+        let depValue = document.getElementsByName('Departments');
+        var i: number;
+        for (i = 0; i < depValue.length; i++) {
+            if (depValue[i].checked) { //checked does exist, its just buggin
+                console.log(depValue[i].id);
+                return depValue[i].id;
+            }
+        }
+        return 'All';
+
+    };//Get department from filter function
 
     getTypeValue = () => {
-        //TODO
-        //return selection variable in filter titled Request Types
-    };
+        let reqValue = document.getElementsByName('Request Types');
+        var i: number;
+        for (i = 0; i < reqValue.length; i++) {
+            if (reqValue[i].checked) { //checked does exist, its just buggin
+                console.log(reqValue[i].id);
+                return reqValue[i].id;
+            }
+        }
+        return 'All';
+    };//Get Type from filter function
 
     getDistrictValue = () => {
-        //TODO
-        //get district value from form for districts (implemnented as 'html select' or 'slider' (if slider not default))
+        //get district value from form for districts (implemnented as 'html select')
+        let dVal = document.getElementById('districtPick') as HTMLInputElement;
+        if (dVal.value == 'All') {
+            return 0;
+        }
+        return parseInt(dVal.value, 10);
     };
 
     handleLocationInput = (e: any) => {
@@ -77,22 +99,64 @@ class FilterHub extends Component {
 
     search = () => {
         //TODO 
-        console.log(searchLocation);
-        console.log(searchRequestNumber);
+        departmentValue = this.getDepartmentValue(); //
+        requestTypeValue = this.getTypeValue(); //
+        district = this.getDistrictValue(); //0 for all, 1-14 are district numbers
+
+        console.log('Search Location: ' + searchLocation);
+        console.log('Search Number: ' + searchRequestNumber);
+        console.log('Search Department: ' + departmentValue);
+        console.log('Search Request Type: ' + requestTypeValue);
+        console.log('Search District: ' + district);
+        if (searchLocation == undefined) {
+            searchLocation = "";
+            console.log('Updated location: ' + searchLocation);
+        }
+        if (searchRequestNumber == undefined) {
+            searchRequestNumber = "";
+            console.log('updated Number: ' + searchRequestNumber);
+        }
+
     }
 
     render() {
         return (
-            <div style={{ width: 250, border: 'solid', textAlign: 'center' }}>
+            <div style={{ width: 250, border: '1px solid', textAlign: 'center' }}>
                 <h1>Search</h1>
                 <br></br>
                 <br></br>
                 <SearchLocationBox handleInput={this.handleLocationInput} />
                 <SearchRequestNumberBox handleInput={this.handleRequestNumberInput} />
-                <Filter title="Departments" items={Departments} />
-                <Filter title="Request Types" items={Requests} />
+                <div style={{ margin: 10 }}>
+                    <Filter title="Departments" items={Departments} />
+                </div>
+                <div style={{ margin: 10 }}>
+                    <Filter title="Request Types" items={Requests} />
+                </div>
+                <div style={{ textAlign: 'left' }}>
+                    <label>District  <select className='districtPick' id='districtPick'>
+                        <option>All</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                    </select>
+
+                    </label>
+                </div>
+                <br></br>
                 <button onClick={this.search}>Search</button>
-            </div>
+            </div >
         )
     }
 }

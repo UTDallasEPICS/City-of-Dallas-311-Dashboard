@@ -1,5 +1,4 @@
 import FilterHub from "../components/FilterHub";
-import FilterMenu from "../components/FilterMenu";
 import React, { Component } from 'react';
 
 
