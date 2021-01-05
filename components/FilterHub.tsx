@@ -2,6 +2,10 @@ import Filter from "../components/Filter";
 import { SearchLocationBox, SearchRequestNumberBox } from './SearchBox';
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import DATA from '../components/DummyData.json';
+
+
+const data = DATA;
 
 
 /* Format for items
@@ -29,7 +33,6 @@ const Requests = [
     {
         title: 'All',
         content: ['All'],
-
     },
     {
         title: 'Graffiti',
@@ -97,26 +100,41 @@ class FilterHub extends Component {
         searchRequestNumber = e.target.value;
     };//Set Request Number
 
+
     search = () => {
         //TODO 
         departmentValue = this.getDepartmentValue(); //
         requestTypeValue = this.getTypeValue(); //
         district = this.getDistrictValue(); //0 for all, 1-14 are district numbers
 
-        console.log('Search Location: ' + searchLocation);
-        console.log('Search Number: ' + searchRequestNumber);
-        console.log('Search Department: ' + departmentValue);
-        console.log('Search Request Type: ' + requestTypeValue);
-        console.log('Search District: ' + district);
+        //If the user never touches search bar, it classifies as undefined
         if (searchLocation == undefined) {
             searchLocation = "";
-            console.log('Updated location: ' + searchLocation);
         }
         if (searchRequestNumber == undefined) {
             searchRequestNumber = "";
-            console.log('updated Number: ' + searchRequestNumber);
         }
 
+        function isItGood(obj: any) {
+            //returns true after making it thru all checks
+            if ((district == 0 || district == parseInt(obj.Council_District__c, 10)) && //Filters district
+                (searchLocation == "" || obj.Incap311__Address__c.includes(searchLocation)) && //Filters Location
+                (searchRequestNumber == "" || obj.Incap311__Service_Request_Number__c.includes(searchRequestNumber)) && //Filters request #
+                (requestTypeValue == "All") &&  //Request type
+                (departmentValue == "All") //Department filter
+            ) {
+                return true;
+            }
+            //after 1st false it exits and returns false
+            return false;
+        }
+        //create new array to send desired results to so we don't have to repeatedly call the function and can just filter data on hand
+        //Begin the filtering part here as well
+        let filteredData = data.filter((obj: any) =>
+            isItGood(obj)
+        )
+
+        console.log(filteredData);
     }
 
     render() {

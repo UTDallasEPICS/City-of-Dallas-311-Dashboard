@@ -12,6 +12,7 @@
     "bootstrap": "^4.5.3",
     "d3": "^5.15.1",
     "isomorphic-unfetch": "3.0.0",
+    "json-loader": "^0.5.7",
     "next": "latest",
     "randomstring": "^1.1.5",
     "react": "^16.14.0",
