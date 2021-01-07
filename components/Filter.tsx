@@ -32,13 +32,14 @@ function Filter({ title, items }: { title: any, items: any }) {
             <Button className="DropDown-Button" variant="outline-primary" onClick={() => toggle(!open)} onKeyPress={() => toggle(!open)} block>
                 {title}
             </Button>
-            <div >{!open ?
+            <div >{!open ? //TODO make this div have a scroll bar
                 '' :
                 <ul style={{ listStyleType: 'none', alignContent: 'left', border: '1px solid' }}>
                     {items.map((item: any) => (
-                        <li className="item-button" key={item.title} style={{ textAlign: 'left' }}>
-                            <input type="radio" name={title} id={item.title} defaultChecked={inSelection(item)} onChange={() => handleClick(item)} />
-                            <label>{ }  {item.title}</label>
+                        <li className="item-button" key={item.title} style={{ textAlign: 'left', }}>
+                            <input type="radio" name={title} id={item.title} defaultChecked={inSelection(item)}
+                                onChange={() => handleClick(item)} style={{ marginLeft: -20 }} />
+                            <label style={{ overflowWrap: 'break-word', marginLeft: 3 }}> {item.title}</label>
                         </li>
                     ))}
                 </ul>
