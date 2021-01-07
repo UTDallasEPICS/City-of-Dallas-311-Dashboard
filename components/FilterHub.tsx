@@ -179,7 +179,10 @@ class FilterHub extends Component<ReportProps> {
 
     render() {
         return (
-            <div style={{ width: 250, border: '1px solid', textAlign: 'center', maxHeight: 650, overflowY: 'auto' }}>
+            <div style={{
+                width: 250, border: '1px solid', textAlign: 'center', maxHeight: 650,
+                overflowY: 'auto', gridArea: 'FilterHub'
+            }} id="FilterHub">
                 <h1>Search</h1>
                 <br></br>
                 <br></br>

@@ -1,6 +1,7 @@
 import FilterHub from "../components/FilterHub";
 import React, { Component } from 'react';
 import Navibar from '../components/Navibar';
+import DashboardTabs from '../components/Dashboard'
 
 class index extends Component {
     state = { selectedValues: undefined };
@@ -19,10 +20,10 @@ class index extends Component {
                     <p />
                 </div>
                 <div className="311-dashboard-container" style={{
-                    display: 'grid', gridTemplateAreas: '"FilterHub "'
+                    display: 'grid', gridTemplateAreas: '"FilterHub Tabs Tabs Tabs"'
                 }}>
                     <FilterHub onFilterHub={this.getData} />
-
+                    <DashboardTabs />
                 </div>
             </div>
         )
