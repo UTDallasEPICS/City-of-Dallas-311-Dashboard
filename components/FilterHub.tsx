@@ -29,6 +29,18 @@ for (let i = 0; i < Departments.length; i++) {
     }
 }
 //TODO sort alphabetically via title
+Departments.sort(function (a, b) {
+    var nameA = a.title.toUpperCase(); // ignore upper and lowercase
+    var nameB = b.title.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+        return -1;
+    }
+    if (nameA > nameB) {
+        return 1;
+    }
+    // names must be equal
+    return 0;
+});
 //line below adds all button to front
 Departments.unshift({ title: "All", content: ["All"] });
 
@@ -44,6 +56,18 @@ for (let i = 0; i < Requests.length; i++) {
     }
 }
 //TODO sort alphabetically via title
+Requests.sort(function (a, b) {
+    var nameA = a.title.toUpperCase(); // ignore upper and lowercase
+    var nameB = b.title.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+        return -1;
+    }
+    if (nameA > nameB) {
+        return 1;
+    }
+    // names must be equal
+    return 0;
+});
 //line below adds all button to front
 Requests.unshift({ title: "All", content: ["All"] });
 
