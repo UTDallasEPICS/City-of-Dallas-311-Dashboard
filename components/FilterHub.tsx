@@ -85,13 +85,13 @@ type ReportProps = {
 
 class FilterHub extends Component<ReportProps> {
 
+
     constructor(props: ReportProps) {
         super(props);
+        this.props.onFilterHub(data);
     };
 
-    state = {
-        selectedValues: data,
-    }
+
 
     getDepartmentValue = () => {
         let depValue = document.getElementsByName('Departments');
@@ -175,13 +175,11 @@ class FilterHub extends Component<ReportProps> {
         console.log(Object.keys(filteredData[0]));
     }
 
-
-
     render() {
         return (
             <div style={{
                 width: 250, border: '1px solid', textAlign: 'center', maxHeight: 650,
-                overflowY: 'auto', gridArea: 'FilterHub'
+                overflowY: 'auto', gridArea: 'FilterHub', marginTop: 42
             }} id="FilterHub">
                 <h1>Search</h1>
                 <br></br>
@@ -216,7 +214,7 @@ class FilterHub extends Component<ReportProps> {
                     </label>
                 </div>
                 <br></br>
-                <button style={{}} onClick={this.search}>Search</button>
+                <button style={{ marginBottom: 10 }} onClick={this.search}>Search</button>
             </div >
         )
     }

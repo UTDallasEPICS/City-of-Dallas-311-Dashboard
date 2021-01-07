@@ -1,30 +1,30 @@
-import Vert from "../components/vertical_bar";
-import Horiz from "../components/horizontal_bar";
-import PieG from "../components/pie_chart";
 import { Map } from '../components/Map';
 import { Tabs, Tab } from 'react-bootstrap';
+import Report from '../components/Report';
 import React, { useState } from 'react';
+import { ServiceRequest } from '../components/types';
 
 
-function DashboardTabs() {
+
+function DashboardTabs({ DashProps }: { DashProps: ServiceRequest[] }) {
     const [key, setKey] = useState('Main');
-
     return (
         <Tabs id='Tabs'
             activeKey={key}
             onSelect={(k) => setKey(k)}
-            style={{ gridArea: 'Tabs' }}>
+            style={{ gridArea: 'Tabs', position: 'absolute' }}>
             <Tab eventKey="Main" title="Map">
                 <div>
                     <Map />
-                    <PieG />
                 </div>
             </Tab>
-            <Tab eventKey='Other' title="Other">
+            <Tab eventKey='Graphs' title="Graphs">
                 <div>
-                    <Vert />
-                    <Horiz />
+
                 </div>
+            </Tab>
+            <Tab eventKey="Report" title="Report">
+                <Report data={DashProps} month="January" year="2019" />
             </Tab>
         </Tabs>
     )

@@ -2,13 +2,26 @@ import FilterHub from "../components/FilterHub";
 import React, { Component } from 'react';
 import Navibar from '../components/Navibar';
 import DashboardTabs from '../components/Dashboard'
+import { ServiceRequest } from '../components/types';
 
-class index extends Component {
-    state = { selectedValues: undefined };
+
+type IndexProps = {
+    ServiceRequests: ServiceRequest[];
+}
+
+
+class index extends Component<IndexProps> {
+    constructor(props: IndexProps) {
+        super(props);
+
+    };
+
+    state = { selectedValues: this.props.ServiceRequests };
 
     getData = (item: any) => {
-        this.setState({ selectedValues: item });
-        console.log(this.state.selectedValues);
+        this.setState({ selectedValues: item }, () => {
+
+        })
     };
 
 
@@ -16,14 +29,12 @@ class index extends Component {
         return (
             <div>
                 <Navibar />
-                <div>
-                    <p />
-                </div>
+                <br />
                 <div className="311-dashboard-container" style={{
                     display: 'grid', gridTemplateAreas: '"FilterHub Tabs Tabs Tabs"'
                 }}>
                     <FilterHub onFilterHub={this.getData} />
-                    <DashboardTabs />
+                    <DashboardTabs DashProps={this.state.selectedValues} />
                 </div>
             </div>
         )
