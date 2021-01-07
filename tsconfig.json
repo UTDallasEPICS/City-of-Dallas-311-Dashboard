@@ -5,12 +5,7 @@
         "dom",
         "dom.iterable",
         "esnext"
-      ],
-
-
-
-    
-      "allowJs": true,
+      ],"allowJs": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

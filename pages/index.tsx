@@ -17,7 +17,6 @@ class index extends Component {
         console.log(this.state.selectedValues);
     };
 
-
     render() {
         return (
             <div>
