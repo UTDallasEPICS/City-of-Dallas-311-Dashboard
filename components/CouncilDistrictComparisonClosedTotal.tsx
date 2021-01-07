@@ -2,15 +2,15 @@
 vs closed cases with bar and area graph */
 
 import React, { PureComponent } from 'react';
-import {ComposedChart, Area, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,} from 'recharts';
-import serviceRequests from '../pages/dummydata.json';
+import { ComposedChart, Area, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, } from 'recharts';
+import { ServiceRequest } from "./types";
 
-function BarGraph() {
+function ClosedCompare() {
 
     var councilDistrict1Closed = 0;
     var councilDistrict1Total = 0;
 
-    var councilDistrict2Closed = 0;    
+    var councilDistrict2Closed = 0;
     var councilDistrict2Total = 0;
 
 
@@ -69,7 +69,7 @@ function BarGraph() {
                 councilDistrict1Closed++;
             }
             councilDistrict1Total++;
-            
+
         }
 
         if (d[i].Council_District__c == "2") {
@@ -208,43 +208,43 @@ function BarGraph() {
         {
             District: '14', Closed: councilDistrict14Closed, Total: councilDistrict14Total,
         },
-      ];
+    ];
 
 
-      const title = {
+    const title = {
         color: "black",
         padding: "20px",
         fontFamily: "Arial",
         position: 'absolute',
         left: "100px",
-        top:"-30px",
+        top: "-30px",
         fontSize: "20px"
-      };
+    };
 
 
     return (
 
 
         <ComposedChart
-        width={500}
-        height={400}
-        data={data}
-        margin={{
-          top: 20, right: 20, bottom: 20, left: 20,
-        }}
-      >
-        <CartesianGrid stroke="#f5f5f5" />
-        <XAxis dataKey="District" label={{ value: 'Districts', position: 'insideBottomRight', offset: 0, }} />
-        <YAxis label={{ value: 'Service Requests', angle: -90, position: 'insideLeft' }} />
-        <Tooltip />
-        <Legend />
-        <Area type="monotone" dataKey="Closed" fill="#46db18" stroke="#46db18" />
-        <Bar dataKey ="Total" barSize={20} fill="#0008ff" />
-        {/* <Scatter dataKey="cnt" fill="red" /> */}
-      </ComposedChart>
+            width={500}
+            height={400}
+            data={data}
+            margin={{
+                top: 20, right: 20, bottom: 20, left: 20,
+            }}
+        >
+            <CartesianGrid stroke="#f5f5f5" />
+            <XAxis dataKey="District" label={{ value: 'Districts', position: 'insideBottomRight', offset: 0, }} />
+            <YAxis label={{ value: 'Service Requests', angle: -90, position: 'insideLeft' }} />
+            <Tooltip />
+            <Legend />
+            <Area type="monotone" dataKey="Closed" fill="#46db18" stroke="#46db18" />
+            <Bar dataKey="Total" barSize={20} fill="#0008ff" />
+            {/* <Scatter dataKey="cnt" fill="red" /> */}
+        </ComposedChart>
 
-            
-        );
+
+    );
 }
 
-export default BarGraph;
+export default ClosedCompare;

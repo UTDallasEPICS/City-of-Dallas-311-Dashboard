@@ -34,7 +34,7 @@ function Filter({ title, items }: { title: any, items: any }) {
             </Button>
             <div >{!open ? //TODO make this div have a scroll bar
                 '' :
-                <ul style={{ listStyleType: 'none', alignContent: 'left', border: '1px solid', maxHeight: 350, overflowY: 'auto' }}>
+                <ul style={{ listStyleType: 'none', alignContent: 'left', border: '1px solid', height: 360, overflowY: 'auto' }}>
                     {items.map((item: any) => (
                         <li className="item-button" key={item.title} style={{ textAlign: 'left', }}>
                             <input type="radio" name={title} id={item.title} defaultChecked={inSelection(item)}

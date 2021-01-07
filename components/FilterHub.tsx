@@ -84,14 +84,10 @@ type ReportProps = {
 
 
 class FilterHub extends Component<ReportProps> {
-
-
     constructor(props: ReportProps) {
         super(props);
         this.props.onFilterHub(data);
     };
-
-
 
     getDepartmentValue = () => {
         let depValue = document.getElementsByName('Departments');
@@ -137,7 +133,6 @@ class FilterHub extends Component<ReportProps> {
         searchRequestNumber = e.target.value;
     };//Set Request Number
 
-
     search = () => {
         //TODO 
         departmentValue = this.getDepartmentValue(); //
@@ -178,7 +173,7 @@ class FilterHub extends Component<ReportProps> {
     render() {
         return (
             <div style={{
-                width: 250, border: '1px solid', textAlign: 'center', maxHeight: 650,
+                width: 250, border: '1px solid', textAlign: 'center', height: 750,
                 overflowY: 'auto', gridArea: 'FilterHub', marginTop: 42
             }} id="FilterHub">
                 <h1>Search</h1>

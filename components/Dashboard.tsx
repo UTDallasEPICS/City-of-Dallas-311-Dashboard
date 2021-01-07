@@ -3,6 +3,8 @@ import { Tabs, Tab } from 'react-bootstrap';
 import Report from '../components/Report';
 import React, { useState } from 'react';
 import { ServiceRequest } from '../components/types';
+import SpecificCompare from '../components/CouncilDistrictComparisonSpecific';
+import ClosedCompare from '../components/CouncilDistrictComparisonSpecific';
 
 
 
@@ -15,12 +17,14 @@ function DashboardTabs({ DashProps }: { DashProps: ServiceRequest[] }) {
             style={{ gridArea: 'Tabs', position: 'absolute' }}>
             <Tab eventKey="Main" title="Map">
                 <div>
+                    <br />
+                    <br />
                     <Map />
                 </div>
             </Tab>
             <Tab eventKey='Graphs' title="Graphs">
                 <div>
-
+                    <SpecificCompare serviceRequests={DashProps} />
                 </div>
             </Tab>
             <Tab eventKey="Report" title="Report">
