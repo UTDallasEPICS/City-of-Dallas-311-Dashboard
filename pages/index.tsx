@@ -13,7 +13,6 @@ type IndexProps = {
 class index extends Component<IndexProps> {
     constructor(props: IndexProps) {
         super(props);
-
     };
 
     state = { selectedValues: this.props.ServiceRequests };
@@ -23,7 +22,6 @@ class index extends Component<IndexProps> {
 
         })
     };
-
 
     render() {
         return (
