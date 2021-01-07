@@ -78,8 +78,20 @@ let departmentValue: string;
 let requestTypeValue: string;
 let district: number;
 
+type ReportProps = {
+    onFilterHub: (item: any) => void
+}
 
-class FilterHub extends Component {
+
+class FilterHub extends Component<ReportProps> {
+
+    constructor(props: ReportProps) {
+        super(props);
+    };
+
+    state = {
+        selectedValues: data,
+    }
 
     getDepartmentValue = () => {
         let depValue = document.getElementsByName('Departments');
@@ -158,14 +170,16 @@ class FilterHub extends Component {
         let filteredData = data.filter((obj: any) =>
             isItGood(obj)
         )
-
+        this.props.onFilterHub(filteredData);
         console.log(filteredData);
         console.log(Object.keys(filteredData[0]));
     }
 
+
+
     render() {
         return (
-            <div style={{ width: 250, border: '1px solid', textAlign: 'center' }}>
+            <div style={{ width: 250, border: '1px solid', textAlign: 'center', maxHeight: 650, overflowY: 'auto' }}>
                 <h1>Search</h1>
                 <br></br>
                 <br></br>
@@ -199,7 +213,7 @@ class FilterHub extends Component {
                     </label>
                 </div>
                 <br></br>
-                <button onClick={this.search}>Search</button>
+                <button style={{}} onClick={this.search}>Search</button>
             </div >
         )
     }
