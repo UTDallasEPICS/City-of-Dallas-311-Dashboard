@@ -152,7 +152,7 @@ class Report extends React.Component<ReportProps> {
               </Col>
             </Row>
           <Row>
-            <Col>Graph 1</Col>
+            <Col>Circle thing</Col>
             <Col>
               <h2>Top SR Types {this.date()}</h2>
               <Table striped bordered hover>
@@ -170,8 +170,8 @@ class Report extends React.Component<ReportProps> {
             </Col>
           </Row>
           <Row>
-            <Col>Graph 3</Col>
-            <Col>Graph 4</Col>
+            <Col>vert bar graph with trendlines</Col>
+            <Col>bar graph</Col>
           </Row>
           <Row>
             <Col> 
