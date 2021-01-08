@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button'
+import onClickOutside from 'react-onclickoutside';
 //import { propTypes } from 'react-bootstrap/esm/Image';
+
+
 
 
 function Filter({ title, items }: { title: any, items: any }) {
     const [open, setOpen] = useState(false);
     const [selection, setSelection] = useState(['All']);
     const toggle = (e: any) => setOpen(!open);
+    Filter['handleClickOutside_' + title] = () => setOpen(false);
 
     function handleClick(item: any) {
         if (!selection.some((current: any) => current.title === item.title)) {
@@ -48,5 +52,8 @@ function Filter({ title, items }: { title: any, items: any }) {
         </div>
     )
 }
+const clickOutsideConfig = {
+    handleClickOutside: ({ props }) => Filter['handleClickOutside_' + props.title]
+};
 
-export default Filter
+export default onClickOutside(Filter, clickOutsideConfig);

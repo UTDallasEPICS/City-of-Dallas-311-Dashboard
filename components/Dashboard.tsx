@@ -9,7 +9,6 @@ import SRDistribution from "../components/SRDistribution";
 import SROwner from '../components/SROwnerComparison';
 
 
-
 function DashboardTabs({ DashProps }: { DashProps: ServiceRequest[] }) {
     const [key, setKey] = useState('Main');
     return (
