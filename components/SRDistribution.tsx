@@ -76,10 +76,10 @@ function SRDistribution({ serviceRequests }: { serviceRequests: ServiceRequest[]
       <table>
         <tr>
           <td>
-{/* 
-            <h2 style={totalRequestsHeader}> Total Requests: </h2>
-            <h2 style={totalRequestsQuantity}> {totalRequests} </h2>
- */}
+
+            <p style={totalRequestsHeader}> Total Requests: </p>
+            <p style={totalRequestsQuantity}> {totalRequests} </p>
+
             <PieChart width={400} height={400}>
               <Pie
                 data={data}
