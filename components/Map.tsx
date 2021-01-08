@@ -10,7 +10,7 @@ const MAPBOX_TOKEN = 'pk.eyJ1IjoidXRkMzExIiwiYSI6ImNrZmZ1NjdvMzBlOXkyeGxhanZtamp
 
 export const Map: React.FC<MapProps> = ({ }) => {
   const [viewportData, setViewportData] = useState<ViewportProps>({
-    width: 1300,
+    width: 900,
     height: 700,
     latitude: 32.7791,
     longitude: -96.8003,
