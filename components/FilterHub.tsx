@@ -17,7 +17,7 @@ function checkNull(item: any) {
 
 //List of department variables
 //Generates by pulling from the data
-let Departments = data.map(item => ({ title: item.Service_Department__c, content: [item.Service_Department_Code__c, item.Service_Department__c] }));
+let Departments = data.map(item => ({ title: item.Service_Department__c }));
 //Hide null values
 Departments = Departments.filter(item => (checkNull(item)));
 //Cuts out duplicates      TODO OPTIMIZE THIS ALGO
@@ -44,7 +44,7 @@ Departments.sort(function (a, b) {
 //line below adds all button to front
 Departments.unshift({ title: "All", content: ["All"] });
 
-let Requests = data.map(item => ({ title: item.SR_Owner__c, content: [item.SR_Owner__c] }));
+let Requests = data.map(item => ({ title: item.SR_Owner__c }));
 //Hide null values
 Requests = Requests.filter(item => (checkNull(item)));
 //Cuts out duplicates      TODO OPTIMIZE THIS ALGO
@@ -172,6 +172,8 @@ class FilterHub extends Component<ReportProps, ReportState> {
             isItGood(obj)
         )
         this.props.onFilterHub(filteredData);
+        console.log(filteredData);
+        console.log(requestTypeValue);
         this.setState({ totalSr: filteredData.length });
 
     }

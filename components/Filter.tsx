@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button'
 import onClickOutside from 'react-onclickoutside';
-//import { propTypes } from 'react-bootstrap/esm/Image';
-
 
 
 
 function Filter({ title, items }: { title: any, items: any }) {
-    const [open, setOpen] = useState(false);
-    const [selection, setSelection] = useState(['All']);
+    const [open, setOpen] = useState(false); //button open or closed
+    const [selection, setSelection] = useState(['All']);//this is what has been selected, All by default
     const toggle = (e: any) => setOpen(!open);
-    Filter['handleClickOutside_' + title] = () => setOpen(false);
+    //Filter['handleClickOutside_' + title] = () => setOpen(false);//This is for the onClickOutside
 
     function handleClick(item: any) {
         if (!selection.some((current: any) => current.title === item.title)) {
@@ -36,7 +34,7 @@ function Filter({ title, items }: { title: any, items: any }) {
             <Button className="DropDown-Button" variant="outline-primary" onClick={() => toggle(!open)} onKeyPress={() => toggle(!open)} block>
                 {title}
             </Button>
-            <div >{!open ? //TODO make this div have a scroll bar
+            <div >{!open ?
                 '' :
                 <ul style={{ listStyleType: 'none', alignContent: 'left', border: '1px solid', height: 360, overflowY: 'auto' }}>
                     {items.map((item: any) => (
@@ -52,8 +50,10 @@ function Filter({ title, items }: { title: any, items: any }) {
         </div>
     )
 }
-const clickOutsideConfig = {
+/*const clickOutsideConfig = {
     handleClickOutside: ({ props }) => Filter['handleClickOutside_' + props.title]
 };
 
 export default onClickOutside(Filter, clickOutsideConfig);
+*/
+export default Filter;

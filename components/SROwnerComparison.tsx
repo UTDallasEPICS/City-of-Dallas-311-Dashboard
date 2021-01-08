@@ -62,7 +62,7 @@ function SROwner({ serviceRequests }: { serviceRequests: ServiceRequest[] }) {
   return (
 
     <ComposedChart
-      style={{ gridArea: SROwner }}
+      style={{ gridArea: 'SROwner' }}
       layout="vertical"
       width={500}
       height={400}
