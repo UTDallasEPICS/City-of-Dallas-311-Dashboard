@@ -1,8 +1,10 @@
 /* File creates a circle chart distribution for all the cases in the json file 
 with open, closed, and in progress cases. */
 
+import { isAbsolute } from 'path';
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip } from 'recharts';
+import { brotliDecompress } from 'zlib';
 import { ServiceRequest } from "./types";
 
 function SRDistribution({ serviceRequests }: { serviceRequests: ServiceRequest[] }) {
@@ -34,28 +36,33 @@ function SRDistribution({ serviceRequests }: { serviceRequests: ServiceRequest[]
     color: "black",
     padding: "20px",
     fontFamily: "Arial",
-
-    left: "57px",
-    top: "210px",
-    fontSize: "14px"
+    position: "absolute",
+    left: "350px",
+    top: "1140px",
+    fontSize: "15px"
   };
 
   const keyLabels = {
     fontFamily: "Arial",
     fontSize: "14px",
-    left: "100px",
+    left: "200px",
     top: "-30px",
   };
 
   const table = {
-    left: "250px",
-    top: "170px",
+    left: "500px",
+    top: "1100px",
+    position: "absolute",
   };
 
   const totalRequestsQuantity = {
     fontFamily: "Arial",
-    left: "115px",
-    top: "240px",
+    position: "absolute",
+    zindex: -1,
+    left: "405px",
+    top: "1180px",
+    fontSize: "20px",
+    fontweight: "bold",
   };
 
 
@@ -70,8 +77,8 @@ function SRDistribution({ serviceRequests }: { serviceRequests: ServiceRequest[]
         <tr>
           <td>
 
-            <h2 style={totalRequestsHeader}> Total Requests: </h2>
-            <h2 style={totalRequestsQuantity}> {totalRequests} </h2>
+            <p style={totalRequestsHeader}> Total Requests: </p>
+            <p style={totalRequestsQuantity}> {totalRequests} </p>
 
             <PieChart width={800} height={400}>
               <Pie
