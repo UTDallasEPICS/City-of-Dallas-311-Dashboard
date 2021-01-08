@@ -34,7 +34,7 @@ function SRDistribution({ serviceRequests }: { serviceRequests: ServiceRequest[]
     color: "black",
     padding: "20px",
     fontFamily: "Arial",
-    position: 'absolute',
+
     left: "57px",
     top: "210px",
     fontSize: "14px"
@@ -48,14 +48,12 @@ function SRDistribution({ serviceRequests }: { serviceRequests: ServiceRequest[]
   };
 
   const table = {
-    position: "absolute",
     left: "250px",
     top: "170px",
   };
 
   const totalRequestsQuantity = {
     fontFamily: "Arial",
-    position: 'absolute',
     left: "115px",
     top: "240px",
   };
@@ -67,7 +65,7 @@ function SRDistribution({ serviceRequests }: { serviceRequests: ServiceRequest[]
 
   return (
 
-    <>
+    <div style={{ gridArea: 'SRDistribution' }}>
       <table>
         <tr>
           <td>
@@ -91,8 +89,6 @@ function SRDistribution({ serviceRequests }: { serviceRequests: ServiceRequest[]
                 <Tooltip />
               </Pie>
             </PieChart>
-
-
           </td>
           <td>
 
@@ -133,8 +129,7 @@ function SRDistribution({ serviceRequests }: { serviceRequests: ServiceRequest[]
           </td>
         </tr>
       </table>
-    </>
-
+    </div>
   );
 }
 export default SRDistribution;

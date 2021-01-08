@@ -215,7 +215,7 @@ function ClosedCompare({ serviceRequests }: { serviceRequests: ServiceRequest[] 
         color: "black",
         padding: "20px",
         fontFamily: "Arial",
-        position: 'absolute',
+
         left: "100px",
         top: "-30px",
         fontSize: "20px"
@@ -229,6 +229,7 @@ function ClosedCompare({ serviceRequests }: { serviceRequests: ServiceRequest[] 
             width={500}
             height={400}
             data={data}
+            style={{ gridArea: 'ClosedCompare' }}
             margin={{
                 top: 20, right: 20, bottom: 20, left: 20,
             }}

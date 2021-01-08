@@ -24,21 +24,11 @@ function DashboardTabs({ DashProps }: { DashProps: ServiceRequest[] }) {
                 </div>
             </Tab>
             <Tab eventKey='Graphs' title="Graphs">
-                <div>
-                    <br />
-                    <br />
-                    <div style={{ gridTemplateAreas: " " }}>
-                        <SpecificCompare serviceRequests={DashProps} />
-                        <ClosedCompare serviceRequests={DashProps} />
-                    </div>
-                    <div style={{ gridTemplateAreas: "SRDistribution SROwner  SROwner" }}>
-                        <div style={{ gridArea: 'SRDistribution' }}>
-                            <SRDistribution serviceRequests={DashProps} />
-                        </div>
-                        <div style={{ gridArea: 'SROwner' }}>
-                            <SROwner serviceRequests={DashProps} />
-                        </div>
-                    </div>
+                <div style={{ gridTemplateAreas: "'SpecificCompare ClosedCompare''SRDistribution SROwner " }}>
+                    <SpecificCompare serviceRequests={DashProps} />
+                    <ClosedCompare serviceRequests={DashProps} />
+                    <SRDistribution serviceRequests={DashProps} />
+                    <SROwner serviceRequests={DashProps} />
                 </div>
             </Tab>
             <Tab eventKey="Report" title="Report">

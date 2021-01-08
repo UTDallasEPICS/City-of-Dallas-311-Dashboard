@@ -82,12 +82,20 @@ type ReportProps = {
     onFilterHub: (item: any) => void
 }
 
+export interface ReportState {
+    totalSr: number;
+}
 
-class FilterHub extends Component<ReportProps> {
+
+class FilterHub extends Component<ReportProps, ReportState> {
     constructor(props: ReportProps) {
         super(props);
         this.props.onFilterHub(data);
+        this.state = {
+            totalSr: data.length
+        };
     };
+
 
     getDepartmentValue = () => {
         let depValue = document.getElementsByName('Departments');
@@ -164,6 +172,8 @@ class FilterHub extends Component<ReportProps> {
             isItGood(obj)
         )
         this.props.onFilterHub(filteredData);
+        this.setState({ totalSr: filteredData.length });
+
     }
 
     render() {
@@ -173,8 +183,8 @@ class FilterHub extends Component<ReportProps> {
                 overflowY: 'auto', gridArea: 'FilterHub', marginTop: 42
             }} id="FilterHub">
                 <h1>Search</h1>
-                <br></br>
-                <br></br>
+                <h6>Total Requests</h6>
+                <h4>{this.state.totalSr}</h4>
                 <SearchLocationBox handleInput={this.handleLocationInput} />
                 <SearchRequestNumberBox handleInput={this.handleRequestNumberInput} />
                 <div style={{ margin: 10 }}>

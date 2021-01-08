@@ -42,7 +42,6 @@ class SpecificCompare extends React.Component<ReportProps> {
       color: "black",
       padding: "20px",
       fontFamily: "Arial",
-      position: 'absolute',
       left: "100px",
       top: "-30px",
       fontSize: "20px"
@@ -53,6 +52,7 @@ class SpecificCompare extends React.Component<ReportProps> {
         width={500}
         height={500}
         data={data}
+        style={{ gridArea: 'SpecificCompare' }}
         margin={{
           top: 30, right: 30, left: 20, bottom: 10,
         }}
