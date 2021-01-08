@@ -1,6 +1,9 @@
 import React from 'react'
+import SRDistribution from "../components/SRDistribution";
 import { Container, Row, Col, Image, Card, Table } from 'react-bootstrap';
 import {ServiceRequest} from "./types";
+import SROwner from '../components/SROwnerComparison';
+import ClosedCompare from '../components/CouncilDistrictComparisonClosedTotal';
 
 type ReportProps = {
   data: ServiceRequest[];
@@ -152,7 +155,7 @@ class Report extends React.Component<ReportProps> {
               </Col>
             </Row>
           <Row>
-            <Col>Circle thing</Col>
+            <Col><SRDistribution serviceRequests={this.props.data} /></Col>
             <Col>
               <h2>Top SR Types {this.date()}</h2>
               <Table striped bordered hover>
@@ -170,8 +173,8 @@ class Report extends React.Component<ReportProps> {
             </Col>
           </Row>
           <Row>
-            <Col>vert bar graph with trendlines</Col>
-            <Col>bar graph</Col>
+            <Col><ClosedCompare serviceRequests={this.props.data} /></Col>
+            <Col><SROwner serviceRequests={this.props.data} /></Col>
           </Row>
           <Row>
             <Col> 
