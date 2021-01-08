@@ -15,11 +15,10 @@ class index extends Component<IndexProps> {
         super(props);
     };
 
-    state = { selectedValues: this.props.ServiceRequests };
+    state = { selectedValues: [] };
 
     getData = (item: any) => {
         this.setState({ selectedValues: item }, () => {
-
         })
     };
 

@@ -124,12 +124,10 @@ class FilterHub extends Component<ReportProps> {
     };
 
     handleLocationInput = (e: any) => {
-        console.log(e.target.value);
         searchLocation = e.target.value
     };//Set location
 
     handleRequestNumberInput = (e: any) => {
-        console.log(e.target.value);
         searchRequestNumber = e.target.value;
     };//Set Request Number
 
@@ -152,8 +150,8 @@ class FilterHub extends Component<ReportProps> {
             if ((district == 0 || district == parseInt(obj.Council_District__c, 10)) && //Filters district
                 (searchLocation == "" || obj.Incap311__Address__c.includes(searchLocation)) && //Filters Location
                 (searchRequestNumber == "" || obj.Incap311__Service_Request_Number__c.includes(searchRequestNumber)) && //Filters request #
-                (requestTypeValue == "All" || (obj.Service_Department__c == requestTypeValue && obj.Service_Department__c !== null)) &&  //Request type
-                (departmentValue == "All" || (obj.Service_Department__c == requestTypeValue && obj.Service_Department__c !== null)) //Department filter
+                (requestTypeValue == "All" || (obj.SR_Owner__c == requestTypeValue && obj.SR_Owner__c !== null)) &&  //Request type
+                (departmentValue == "All" || (obj.Service_Department__c == departmentValue && obj.Service_Department__c !== null)) //Department filter
             ) {
                 return true;
             }
@@ -166,8 +164,6 @@ class FilterHub extends Component<ReportProps> {
             isItGood(obj)
         )
         this.props.onFilterHub(filteredData);
-        console.log(filteredData);
-        console.log(Object.keys(filteredData[0]));
     }
 
     render() {

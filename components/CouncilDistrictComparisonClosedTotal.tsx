@@ -5,7 +5,7 @@ import React, { PureComponent } from 'react';
 import { ComposedChart, Area, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, } from 'recharts';
 import { ServiceRequest } from "./types";
 
-function ClosedCompare() {
+function ClosedCompare({ serviceRequests }: { serviceRequests: ServiceRequest[] }) {
 
     var councilDistrict1Closed = 0;
     var councilDistrict1Total = 0;

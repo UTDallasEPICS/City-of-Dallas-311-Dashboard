@@ -4,7 +4,9 @@ import Report from '../components/Report';
 import React, { useState } from 'react';
 import { ServiceRequest } from '../components/types';
 import SpecificCompare from '../components/CouncilDistrictComparisonSpecific';
-import ClosedCompare from '../components/CouncilDistrictComparisonSpecific';
+import ClosedCompare from '../components/CouncilDistrictComparisonClosedTotal';
+import SRDistribution from "../components/SRDistribution";
+import SROwner from '../components/SROwnerComparison';
 
 
 
@@ -24,7 +26,20 @@ function DashboardTabs({ DashProps }: { DashProps: ServiceRequest[] }) {
             </Tab>
             <Tab eventKey='Graphs' title="Graphs">
                 <div>
-                    <SpecificCompare serviceRequests={DashProps} />
+                    <br />
+                    <br />
+                    <div style={{ gridTemplateAreas: " " }}>
+                        <SpecificCompare serviceRequests={DashProps} />
+                        <ClosedCompare serviceRequests={DashProps} />
+                    </div>
+                    <div style={{ gridTemplateAreas: "SRDistribution SROwner  SROwner" }}>
+                        <div style={{ gridArea: 'SRDistribution' }}>
+                            <SRDistribution serviceRequests={DashProps} />
+                        </div>
+                        <div style={{ gridArea: 'SROwner' }}>
+                            <SROwner serviceRequests={DashProps} />
+                        </div>
+                    </div>
                 </div>
             </Tab>
             <Tab eventKey="Report" title="Report">
