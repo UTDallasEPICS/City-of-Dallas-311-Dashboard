@@ -172,6 +172,8 @@ class FilterHub extends Component<ReportProps, ReportState> {
             isItGood(obj)
         )
         this.props.onFilterHub(filteredData);
+        console.log(filteredData);
+        console.log(requestTypeValue);
         this.setState({ totalSr: filteredData.length });
 
     }

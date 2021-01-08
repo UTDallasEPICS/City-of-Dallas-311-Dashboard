@@ -28,7 +28,7 @@ class index extends Component<IndexProps> {
                 <Navibar />
                 <br />
                 <div className="311-dashboard-container" style={{
-                    display: 'grid', gridTemplateAreas: '"FilterHub Tabs Tabs Tabs"'
+                    display: 'grid', gridTemplateAreas: '"FilterHub Tabs Tabs Tabs Tabs"'
                 }}>
                     <FilterHub onFilterHub={this.getData} />
                     <DashboardTabs DashProps={this.state.selectedValues} />
