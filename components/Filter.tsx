@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button'
 import onClickOutside from 'react-onclickoutside';
-//import { propTypes } from 'react-bootstrap/esm/Image';
-
 
 
 
 function Filter({ title, items }: { title: any, items: any }) {
-    const [open, setOpen] = useState(false);
-    const [selection, setSelection] = useState(['All']);
+    const [open, setOpen] = useState(false); //button open or closed
+    const [selection, setSelection] = useState(['All']);//this is what has been selected, All by default
     const toggle = (e: any) => setOpen(!open);
-    Filter['handleClickOutside_' + title] = () => setOpen(false);
+    Filter['handleClickOutside_' + title] = () => setOpen(false);//This is for the onClickOutside
 
     function handleClick(item: any) {
         if (!selection.some((current: any) => current.title === item.title)) {
