@@ -25,7 +25,7 @@ const navStyle = {
 
 export const Map: React.FC<MapProps> = ({ }) => {
   const [viewportData, setViewportData] = useState<ViewportProps>({
-    width: 900, // 1300 is standard
+    width: 1000, // 1300 is standard
     height: 700,
     latitude: 32.7791,
     longitude: -96.8003,
@@ -69,8 +69,50 @@ export const Map: React.FC<MapProps> = ({ }) => {
         }}
         mapboxApiAccessToken={MAPBOX_TOKEN}
         mapStyle="mapbox://styles/mapbox/streets-v11">
-
-        <Marker latitude={32.7767} longitude={-96.7970} offsetLeft={-20} offsetTop={-10}>
+        {/* will pull JSON data - temporary hard code */}
+        <Marker latitude={32.7767} longitude={-96.787} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7789} longitude={-96.767} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7357} longitude={-96.789} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7127} longitude={-96.7970} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7123} longitude={-96.723} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7254} longitude={-96.7345} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7369} longitude={-96.7567} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7482} longitude={-96.7789} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7516} longitude={-96.789} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7123} longitude={-96.7321} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7234} longitude={-96.7432} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7345} longitude={-96.7543} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7456} longitude={-96.7654} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7567} longitude={-96.7765} offsetLeft={-20} offsetTop={-10}>
+          <MarkerStyle></MarkerStyle>
+        </Marker>
+        <Marker latitude={32.7678} longitude={-96.7765} offsetLeft={-20} offsetTop={-10}>
           <MarkerStyle></MarkerStyle>
         </Marker>
 
