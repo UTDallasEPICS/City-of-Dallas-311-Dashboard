@@ -1,36 +1,41 @@
-import FilterMenu from "../components/FilterMenu";
-import { Map } from '../components/Map';
+import FilterHub from "../components/FilterHub";
 import React, { Component } from 'react';
-import PieG from "../components/pie_chart";
 import Navibar from '../components/Navibar';
-import Vert from "../components/vertical_bar";
-import Horiz from "../components/horizontal_bar";
+import DashboardTabs from '../components/Dashboard'
+import { ServiceRequest } from '../components/types';
 
-class index extends Component {
+
+type IndexProps = {
+    ServiceRequests: ServiceRequest[];
+}
+
+
+class index extends Component<IndexProps> {
+    constructor(props: IndexProps) {
+        super(props);
+    };
+
+    state = { selectedValues: [] };
+
+    getData = (item: any) => {
+        this.setState({ selectedValues: item }, () => {
+        })
+    };
+
     render() {
         return (
             <div>
                 <Navibar />
-                <div>
-                    <p />
-                </div>
+                <br />
                 <div className="311-dashboard-container" style={{
-                    display: 'grid', gridTemplateAreas: '"FilterMenu Map PieG"'
+                    display: 'grid', gridTemplateAreas: '"FilterHub Tabs Tabs Tabs Tabs"'
                 }}>
-                    < FilterMenu />
-                    <Map />
-                    <PieG />
+                    <FilterHub onFilterHub={this.getData} />
+                    <DashboardTabs DashProps={this.state.selectedValues} />
                 </div>
-                <div className="311-dashboard-container-2" style={{ display: 'grid', gridTemplateAreas: '"Vert Horiz"' }}>
-                    <Vert />
-                    <Horiz />
-                </div>
-
             </div>
         )
     }
 }
 
 export default index;
-
-

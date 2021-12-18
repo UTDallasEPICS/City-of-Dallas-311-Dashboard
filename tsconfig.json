@@ -5,11 +5,7 @@
         "dom",
         "dom.iterable",
         "esnext"
-      ],
-
-
-
-    "allowJs": true,
+      ],"allowJs": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -18,6 +14,7 @@
     //"lib": ["dom", "es2017"],
     "module": "esnext",
     "moduleResolution": "node",
+    "noImplicitAny": false,
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
@@ -29,5 +26,5 @@
     "allowSyntheticDefaultImports": true
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "pages/pie_chart.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "components/pie_chart.js"]
 }
